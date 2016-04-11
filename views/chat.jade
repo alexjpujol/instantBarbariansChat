@@ -1,13 +1,11 @@
-doctype html
-html
-  head
-    title Socket.IO chat
-    link(rel="stylesheet" type="text/css" href="../css/style.css")
-  body
+extends ./layout.jade
+
+block content
+
     ul(id="messages")
     form(action="")
-      input(id="m" autocomplete="off")
-      button Send
+        input(id="m" autocomplete="off")
+        button Send
     script(src="https://cdn.socket.io/socket.io-1.2.0.js")
     script(src="http://code.jquery.com/jquery-1.11.1.js")
     script(src="javascripts/script.js")

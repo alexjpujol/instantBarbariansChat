@@ -11,6 +11,9 @@ var io = require('socket.io').listen(app.listen(3000));
 app.use(express.static('public'))
 app.set('view engine', 'jade');
 app.set('views', './views');
+app.set('view options', {
+    layout: false
+});
 
 //set up the routes
 
