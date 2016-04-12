@@ -10,6 +10,24 @@ body {
 h1 {
     border-bottom: 2px solid black;
     text-align: center;
+    margin-bottom: 0px
+}
+
+#sidebar {
+    float: right;
+    border-left: 2px solid black;
+    margin-left: 0%
+}
+
+#users {
+    height: 200px;
+    border-bottom: 2px solid black;
+    text-align: center
+}
+
+#cypher {
+    height: 385px;
+    text-align: center
 }
 
 #entertext {
@@ -18,7 +36,8 @@ h1 {
     bottom: 0;
     vertical-align: center;
     background-color: black;
-    border-right: 2px solid black
+    border-right: 2px solid black;
+    clear: both;
 }
 
 
@@ -27,11 +46,33 @@ h1 {
 }
       
 #messages li { 
-    padding: 5px 10px; 
+    padding: 10px; 
+    margin: 0px
 }
       
 #messages li:nth-child(odd) { 
     background: #eee; 
+}
+
+h5 {
+    margin-bottom: 0px
+}
+
+video {
+    width: 300px;
+    height: 200px
+}
+
+#user1 {
+    border-bottom: 2px solid black
+}
+
+#record {
+    background-color: whitesmoke;
+    margin-left: 2%;
+    margin-bottom: 0.5%;
+    margin-top: 1%;
+    text-align: center
 }
 
 form {
@@ -47,7 +88,7 @@ form input {
     border-radius: 5px
 }
 
-button {
+#send {
     width: 8%;
     background-color: whitesmoke;
     margin-left: 2%;
