@@ -1,11 +1,21 @@
 extends ./layout.jade
 
 block content
-
-    ul(id="messages")
-    form(action="")
-        input(id="m" autocomplete="off")
-        button Send
+    
+    h1 #{title}
+    
+    .row
+        div#chatmessages(class="nine columns")
+            ul(id="messages")
+        div#users(class="three columns")
+    
+    .row
+        div#entertext(class="twelve columns")
+            form(action="")
+                input(id="m" autocomplete="off")
+                button Send
+    
+    
     script(src="https://cdn.socket.io/socket.io-1.2.0.js")
     script(src="http://code.jquery.com/jquery-1.11.1.js")
     script(src="javascripts/script.js")

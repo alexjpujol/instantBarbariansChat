@@ -1,21 +1,27 @@
-* { 
-    margin: 0; padding: 0; box-sizing: border-box; 
+@font-face {
+    font-family: silianRail;
+    src: url(fonts/silianrail.ttf)
 }
-      
-body { 
-    font: 13px Helvetica, Arial; 
+
+body {
+    font-family: silianRail
 }
-      
-form { 
-    background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; 
+
+h1 {
+    border-bottom: 2px solid black;
+    text-align: center;
 }
-      
-form input { 
-    border: 0; padding: 10px; width: 90%; margin-right: .5%; 
+
+#entertext {
+    border-top: 2px solid black;
+    position: fixed;
+    bottom: 0;
+    vertical-align: center;
+    background-color: black
 }
-      
-form button { 
-    width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; 
+
+#users {
+    border-left: 2px solid black;
 }
       
 #messages { 
@@ -28,4 +34,22 @@ form button {
       
 #messages li:nth-child(odd) { 
     background: #eee; 
+}
+
+form {
+    margin-bottom: 1%;
+    margin-top: 1%
+}
+
+form input {
+    width: 85%;
+    margin-left: 0.5%;
+    margin-bottom: 0%;
+    padding: 10px
+}
+
+button {
+    width: 8%;
+    background-color: whitesmoke;
+    margin-left: 2%
 }
