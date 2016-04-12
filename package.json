@@ -1,7 +1,7 @@
 {
-  "name": "socket-chat-example",
+  "name": "instant-barbarians",
   "version": "0.0.1",
-  "description": "my first socket.io app",
+  "description": "my final project chat app!",
   "scripts": {
         "start": "node index.js",
         "dev": "nodemon index.js"

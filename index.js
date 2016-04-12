@@ -22,7 +22,7 @@ app.get('/', function(req,res) {
 })
 
 app.get('/chat', function(req, res) {
-    res.render('chat', {title: "Main Chat"});
+    res.render('chat', {title: "Instant Barbarians"});
 });
 
 //set up the message events and emissions

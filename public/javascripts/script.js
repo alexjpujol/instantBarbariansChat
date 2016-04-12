@@ -1,4 +1,4 @@
-var socket = io.connect("127.0.0.1:3000");
+var socket = io.connect();
 
 $('form').submit(function(){
     socket.emit('chat message', $('#m').val());

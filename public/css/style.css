@@ -17,13 +17,11 @@ h1 {
     position: fixed;
     bottom: 0;
     vertical-align: center;
-    background-color: black
+    background-color: black;
+    border-right: 2px solid black
 }
 
-#users {
-    border-left: 2px solid black;
-}
-      
+
 #messages { 
     list-style-type: none; margin: 0; padding: 0; 
 }
@@ -37,19 +35,22 @@ h1 {
 }
 
 form {
-    margin-bottom: 1%;
-    margin-top: 1%
+    margin-bottom: 0.5%;
 }
 
 form input {
     width: 85%;
-    margin-left: 0.5%;
+    margin-left: 2%;
+    margin-right: 2%
     margin-bottom: 0%;
-    padding: 10px
+    padding: 10px;
+    border-radius: 5px
 }
 
 button {
     width: 8%;
     background-color: whitesmoke;
-    margin-left: 2%
+    margin-left: 2%;
+    margin-top: 1%;
+    text-align: center
 }
