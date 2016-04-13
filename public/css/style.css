@@ -1,12 +1,3 @@
-@font-face {
-    font-family: silianRail;
-    src: url(fonts/silianrail.ttf)
-}
-
-body {
-    font-family: silianRail
-}
-
 h1 {
     border-bottom: 2px solid black;
     text-align: center;
