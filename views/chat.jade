@@ -7,16 +7,25 @@ block content
     .row
         div#chatmessages(class="nine columns")
             ul(id="messages")
-        div#users(class="three columns")
+        div#sidebar(class="three columns")
+            div#user1
+                h5 Barbarian #1
+                video#myvideo(autoplay)
+                button#record Record
+            div#user2
+                h5 Barbarian #2
+                video#yourvideo(autoplay)
+                button#record Record
     
     .row
-        div#entertext(class="twelve columns")
+        div#entertext(class="nine columns")
             form(action="")
                 input(id="m" autocomplete="off")
-                button Send
+                button#send Send
     
     
     script(src="https://cdn.socket.io/socket.io-1.2.0.js")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
-    script(src="javascripts/script.js")
+    script(src="javascripts/socket.js")
+    script(src="javascripts/webRTC.js")
     
