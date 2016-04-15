@@ -1,37 +1,3 @@
-//$("#record").click(function(){
-//    
-//    //this allows cross browser capabilities, is prefixed
-//    navigator.getUserMedia = (navigator.getUserMedia ||
-//                       navigator.webkitGetUserMedia ||
-//                       navigator.mozGetUserMedia ||
-//                       navigator.msGetUserMedia);
-//    
-//    //this specifies what devices we're accessing, camera and mic
-//    var parameters = {
-//        video: true,
-//        audio: true
-//    }
-//    
-//    //what to do when the user allows access to their audio and video
-//    var successFunction = function(localMediaStream) {
-//        window.stream = localMediaStream;
-//        var video = document.getElementById("myvideo");
-//        video.src = window.URL.createObjectURL(localMediaStream);
-//    }
-//    
-//    //generic error function. will revisit this
-//    var errorFunction = function(e) {console.log(e)}
-//    
-//    navigator.getUserMedia(parameters, successFunction, errorFunction)
-//});
-//
-//$("#stop").click(function() {
-//    //this stops the audio
-//    stream.getTracks()[0].stop();
-//    //this stops the video
-//    stream.getTracks()[1].stop();
-//})
-
 var localStream, localPeerConnection, remotePeerConnection;
 
 var localVideo = document.getElementById("localVideo");

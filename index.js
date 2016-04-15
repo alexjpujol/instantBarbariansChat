@@ -25,6 +25,11 @@ app.get('/', function(req,res) {
 
 io.on('connection', function(socket) {
 
+    socket.on('message', function(message) {
+    console.log('Client said: ', message);
+    // for a real app, would be room-only (not broadcast)
+    socket.broadcast.emit('message', message);
+  });
     
     socket.on('chat message', function(msg) {
         io.emit('chat message', msg);
