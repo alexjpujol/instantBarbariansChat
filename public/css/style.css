@@ -4,33 +4,7 @@ h1 {
     margin-bottom: 0px
 }
 
-#sidebar {
-    float: right;
-    border-left: 2px solid black;
-    margin-left: 0%
-}
-
-#users {
-    height: 200px;
-    border-bottom: 2px solid black;
-    text-align: center
-}
-
-#cypher {
-    height: 385px;
-    text-align: center
-}
-
-#entertext {
-    border-top: 2px solid black;
-    position: fixed;
-    bottom: 0;
-    vertical-align: center;
-    background-color: black;
-    border-right: 2px solid black;
-    clear: both;
-}
-
+/*message section*/
 
 #messages { 
     list-style-type: none; margin: 0; padding: 0; 
@@ -45,17 +19,31 @@ h1 {
     background: #eee; 
 }
 
+/*video section*/
+
 h5 {
     margin-bottom: 0px
 }
 
-video {
-    width: 300px;
-    height: 200px
+#videosection {
+    border-bottom: 2px solid black
 }
 
-#user1 {
-    border-bottom: 2px solid black
+video {
+    width: 300px;
+    height: 250px;
+    border: 1px solid black;
+    text-align: center
+}
+
+#controls {
+    text-align: center;
+    margin-top: 8%;
+}
+
+#user1, #user2 {
+    text-align: center;
+    height: 300px
 }
 
 #record {
@@ -65,6 +53,8 @@ video {
     margin-top: 1%;
     text-align: center
 }
+
+/*chat input at the bottom*/
 
 form {
     margin-bottom: 0.5%;
@@ -85,4 +75,14 @@ form input {
     margin-left: 2%;
     margin-top: 1%;
     text-align: center
+}
+
+#entertext {
+    border-top: 2px solid black;
+    position: fixed;
+    bottom: 0;
+    vertical-align: center;
+    background-color: black;
+    border-right: 2px solid black;
+    clear: both;
 }

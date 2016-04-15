@@ -4,22 +4,22 @@ block content
     
     h1 #{title}
     
+    .row#videosection
+        div#user1(class="four columns")
+            h5 Barbarian #1
+            video#localVideo(autoplay)
+        div#controls(class="four columns")
+            button#startButton Start
+            button#callButton Call
+            button#hangupButton Stop
+        div#user2(class="four columns")
+            h5 Barbarian #2
+            video#remoteVideo(autoplay)
     .row
-        div#chatmessages(class="nine columns")
+        div#chatmessages(class="twelve columns")
             ul(id="messages")
-        div#sidebar(class="three columns")
-            div#user1
-                h5 Barbarian #1
-                video#localVideo(autoplay)
-                button#startButton Start
-                button#callButton Call
-                button#hangupButton Stop
-            div#user2
-                h5 Barbarian #2
-                video#remoteVideo(autoplay)
-    
     .row
-        div#entertext(class="nine columns")
+        div#entertext(class="twelve columns")
             form(action="")
                 input(id="m" autocomplete="off")
                 button#send Send

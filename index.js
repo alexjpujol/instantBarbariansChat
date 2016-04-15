@@ -18,13 +18,8 @@ app.set('view options', {
 //set up the routes
 
 app.get('/', function(req,res) {
-    res.render('index');
-})
-
-app.get('/*', function(req, res) {
     res.render('chat', {title: "Instant Barbarians"});
-});
-
+})
 //set up the message events and emissions
 
 
