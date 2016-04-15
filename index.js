@@ -18,18 +18,14 @@ app.set('view options', {
 //set up the routes
 
 app.get('/', function(req,res) {
-    res.render('index');
-})
-
-app.get('/*', function(req, res) {
     res.render('chat', {title: "Instant Barbarians"});
-});
-
+})
 //set up the message events and emissions
 
 
 io.on('connection', function(socket) {
 
+    
     socket.on('chat message', function(msg) {
         io.emit('chat message', msg);
     });
