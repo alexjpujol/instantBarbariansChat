@@ -22,12 +22,28 @@ app.get('/', function(req,res) {
 })
 //set up the message events and emissions
 
+var users = {}
 
 io.on('connection', function(socket) {
     
-    socket.on('chat message', function(msg) {
-        io.emit('chat message', msg);
+    socket.on("join", function(name) {
+    //i take the socket ID of the socket that just joined and assign that as a key. The value is then the name that is collected via the prompt. 
+    users[socket.id] = name;
+    console.log(name + " has joined the chat!");
+    socket.emit("update", name + " has joined the chat!")
     });
+    
+    socket.on('typing', function(data) {
+        console.log(data);
+    })
+    
+    socket.on('chat message', function(msg) {
+        io.emit('chat message', users[socket.id] + " says: " + msg);
+    });
+    
+    socket.on('disconnect', function(socket) {
+        console.log(socket + " has disconnected!");
+    })
 });
 
 // io.emit('connection', "A new user has joined.");
