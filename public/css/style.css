@@ -80,29 +80,35 @@ video {
 
 form {
     margin-bottom: 0.5%;
+    margin-top: 0.5%;
+    width: 85%;
+    display: inline-block
 }
 
 form input {
-    width: 70%;
+    width: 85%;
     margin-left: 2%;
-    margin-right: 2%;
-    margin-bottom: 0%;
     padding: 10px;
-    border-radius: 5px
+    border-radius: 5px;
+}
+
+button {
+    background-color: whitesmoke;
 }
 
 #translate {
-    width: 9%;
-    background-color: whitesmoke;
-    margin-top: 1%;
-    text-align: center
+    width: 130px;
+    margin-left: 1%;
+    margin-top: 10px;
+    text-align: center;
 }
 
 #send {
-    width: 7%;
-    background-color: whitesmoke;
-    margin-top: 1%;
-    text-align: center
+    width: 100px;
+    margin-left: 1%;
+    margin-top: 10px;
+    text-align: center;
+    display: inline-block
 }
 
 #entertext {
@@ -113,4 +119,8 @@ form input {
     background-color: black;
     border-right: 2px solid black;
     clear: both;
+}
+
+#popup {
+    display: none;
 }

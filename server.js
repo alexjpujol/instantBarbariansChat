@@ -19,7 +19,7 @@ app.set('view options', {
 
 app.get('/', function(req,res) {
     res.render('chat', {title: "Instant Barbarians"});
-})
+});
 //set up the message events and emissions
 
 var users = {}

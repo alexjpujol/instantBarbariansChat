@@ -25,17 +25,33 @@ $(document).ready(function() {
     
     $("#translate").click(function(evt) {
         evt.preventDefault();
-        var startingText = $('#m').val();
-        var source = "https://www.googleapis.com/language/translate/v2?key=AIzaSyDY4WYub-4sTOjexMqIrBozgbTpUURtK7k&source=en&target=de&q=" + startingText;
-        console.log(source);
-        function translateText(text) {
-            var translatedText = text.data.translations[0].translatedText;
-            console.log(translatedText);
-            $('#m').val('');
-            $('#m').val(translatedText);
-        }
-        $.getJSON(source, translateText);
-        
+        $("#popup").css({"display": "block"});
+        $(".language").click(function(e) {
+            if(e.currentTarget.innerText === "GERMAN") {
+                var target = "de"
+            } else if (e.currentTarget.innerText === "SPANISH") {
+                var target = "es"
+            } else if (e.currentTarget.innerText === "FRENCH") {
+                var target = "fr"
+            }
+            else if (e.currentTarget.innerText === "CHINESE") {
+                var target = "zh-CN"
+            }
+            else if (e.currentTarget.innerText === "JAPANESE") {
+                var target = "ja"
+            };
+            
+            var startingText = $('#m').val();
+            var source = "https://www.googleapis.com/language/translate/v2?key=AIzaSyDY4WYub-4sTOjexMqIrBozgbTpUURtK7k&source=en&target=" + target + "&q=" + startingText;
+            console.log(source);
+            function translateText(text) {
+                var translatedText = text.data.translations[0].translatedText;
+                console.log(translatedText);
+                $('#m').val('');
+                $('#m').val(translatedText);
+            }
+            $.getJSON(source, translateText);
+        });
     })
     
     
