@@ -41,12 +41,14 @@ $(document).ready(function() {
             }
             else if (e.currentTarget.innerHTML === "Japanese") {
                 var target = "ja"
+            }
+            else if (e.currentTarget.innerHTML === "Catalan") {
+                var target = "ca"
             };
             var startingText = $('#m').val();
             var source = `https://www.googleapis.com/language/translate/v2?key=AIzaSyDY4WYub-4sTOjexMqIrBozgbTpUURtK7k&source=en&target=${target}&q=${startingText}`;
-            console.log(source);
             function translateText(text) {
-                var translatedText = text.data.translations[0].translatedText;
+                var translatedText = (text.data.translations[0].translatedText).replace("&#39;", "'");
                 console.log(translatedText);
                 $('#m').val('');
                 $('#m').val(translatedText + " (" + startingText + ")");
@@ -55,7 +57,7 @@ $(document).ready(function() {
         });
     })
     
-    
+    //this is for submitting a chat message
     $("form").submit(function(){
         //this creates the chat message event with the value of #m as the data
         socket.emit('chat message', $('#m').val());

@@ -79,7 +79,7 @@ video {
 /*chat input at the bottom*/
 
 form {
-    margin-bottom: 0.5%;
+    margin-bottom: 0px;
     margin-top: 0.5%;
     width: 85%;
     display: inline-block
@@ -123,4 +123,9 @@ button {
 
 #popup {
     display: none;
+    text-align: center
+}
+
+.language {
+    margin: 5px
 }
