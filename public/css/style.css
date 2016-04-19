@@ -7,7 +7,8 @@ h1 {
 /*message section*/
 
 #chatmessages {
-    border-right: solid black 2px
+    border-right: solid black 2px;
+    margin-right: 10px
 }
 
 #messages { 
@@ -26,12 +27,14 @@ h1 {
 }
 
 #userlist { 
-    list-style-type: none; margin: 0; padding: 0; 
+    list-style-type: none; 
+    margin: 0px; 
+    padding: 0px; 
 }
       
 #userlist li { 
     padding: 10px; 
-    margin: 0px
+    margin-left: 0px
 }
       
 #userlist li:nth-child(odd) { 

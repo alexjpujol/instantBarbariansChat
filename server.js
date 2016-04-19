@@ -29,7 +29,6 @@ io.on('connection', function(socket) {
     socket.on("join", function(name) {
     //i take the socket ID of the socket that just joined and assign that as a key. The value is then the name that is collected via the prompt. 
     users[socket.id] = name;
-    console.log(name + " has joined the chat!");
     socket.emit("update", name + " has joined the chat!")
     });
     
@@ -41,8 +40,8 @@ io.on('connection', function(socket) {
         io.emit('chat message', users[socket.id] + " says: " + msg);
     });
     
-    socket.on('disconnect', function(socket) {
-        console.log(socket + " has disconnected!");
+    socket.on('disconnect', function() {
+        io.emit('disconnect', users[socket.id] + " has left the chat!");
     })
 });
 

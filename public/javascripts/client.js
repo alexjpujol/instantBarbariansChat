@@ -4,6 +4,10 @@ var room = 'Instant Barbarians';
     
 $(document).ready(function() {
     
+    socket.on('connect', function() {
+         $("#userlist").append($('<li>').text(name))
+    })
+    
     socket.emit("join", name);
     
     $("form").submit(function(){
@@ -24,8 +28,11 @@ $(document).ready(function() {
 
 
 
-    socket.on('disconnect', function() {
-        $("#messages").append($('<li>').text(name + " has disconnected!"));
-    });
     
+    socket.emit('disconnect', name);
+    socket.on('disconnect', function(user) {
+        $("#messages").append($('<li>').text(user));
+    });
 });
+    
+
