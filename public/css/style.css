@@ -83,18 +83,24 @@ form {
 }
 
 form input {
-    width: 85%;
+    width: 70%;
     margin-left: 2%;
-    margin-right: 2%
+    margin-right: 2%;
     margin-bottom: 0%;
     padding: 10px;
     border-radius: 5px
 }
 
-#send {
-    width: 8%;
+#translate {
+    width: 9%;
     background-color: whitesmoke;
-    margin-left: 2%;
+    margin-top: 1%;
+    text-align: center
+}
+
+#send {
+    width: 7%;
+    background-color: whitesmoke;
     margin-top: 1%;
     text-align: center
 }

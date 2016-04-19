@@ -23,6 +23,22 @@ $(document).ready(function() {
         $("#messages").append($('<li>').text(data));
     })
     
+    $("#translate").click(function(evt) {
+        evt.preventDefault();
+        var startingText = $('#m').val();
+        var source = "https://www.googleapis.com/language/translate/v2?key=AIzaSyDY4WYub-4sTOjexMqIrBozgbTpUURtK7k&source=en&target=de&q=" + startingText;
+        console.log(source);
+        function translateText(text) {
+            var translatedText = text.data.translations[0].translatedText;
+            console.log(translatedText);
+            $('#m').val('');
+            $('#m').val(translatedText);
+        }
+        $.getJSON(source, translateText);
+        
+    })
+    
+    
     $("form").submit(function(){
         //this creates the chat message event with the value of #m as the data
         socket.emit('chat message', $('#m').val());
