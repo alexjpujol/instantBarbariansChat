@@ -23,26 +23,27 @@ $(document).ready(function() {
         $("#messages").append($('<li>').text(data));
     })
     
+    
+    // GOOGLE translate functions here
     $("#translate").click(function(evt) {
         evt.preventDefault();
         $("#popup").css({"display": "block"});
         $(".language").click(function(e) {
-            if(e.currentTarget.innerText === "GERMAN") {
+            if(e.currentTarget.innerHTML === "German") {
                 var target = "de"
-            } else if (e.currentTarget.innerText === "SPANISH") {
+            } else if (e.currentTarget.innerHTML === "Spanish") {
                 var target = "es"
-            } else if (e.currentTarget.innerText === "FRENCH") {
+            } else if (e.currentTarget.innerHTML === "French") {
                 var target = "fr"
             }
-            else if (e.currentTarget.innerText === "CHINESE") {
+            else if (e.currentTarget.innerHTML === "Chinese") {
                 var target = "zh-CN"
             }
-            else if (e.currentTarget.innerText === "JAPANESE") {
+            else if (e.currentTarget.innerHTML === "Japanese") {
                 var target = "ja"
             };
-            
             var startingText = $('#m').val();
-            var source = "https://www.googleapis.com/language/translate/v2?key=AIzaSyDY4WYub-4sTOjexMqIrBozgbTpUURtK7k&source=en&target=" + target + "&q=" + startingText;
+            var source = `https://www.googleapis.com/language/translate/v2?key=AIzaSyDY4WYub-4sTOjexMqIrBozgbTpUURtK7k&source=en&target=${target}&q=${startingText}`;
             console.log(source);
             function translateText(text) {
                 var translatedText = text.data.translations[0].translatedText;
