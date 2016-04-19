@@ -26,15 +26,15 @@ var users = {}
 
 io.on('connection', function(socket) {
     
-    socket.on("join", function(name) {
-    //i take the socket ID of the socket that just joined and assign that as a key. The value is then the name that is collected via the prompt. 
-    users[socket.id] = name;
-    socket.emit("update", name + " has joined the chat!")
+    socket.on('join', function(name) {
+    //i take the socket ID of the socket that just joined and assign that as a key. The value is then the name that is collected via the prompt. This is then passed back to the client
+        users[socket.id] = name;
+        io.emit('new user', name + " has joined the chat!")
     });
     
-    socket.on('typing', function(data) {
-        console.log(data);
-    })
+//    socket.on('typing', function(name) {
+//        io.socket.broadcast(name + " is typing!");
+//    })
     
     socket.on('chat message', function(msg) {
         io.emit('chat message', users[socket.id] + " says: " + msg);

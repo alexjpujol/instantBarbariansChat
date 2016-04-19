@@ -19,7 +19,7 @@ h1 {
       
 #messages li { 
     padding: 10px; 
-    margin: 0px
+    margin: 0px;
 }
       
 #messages li:nth-child(odd) { 
