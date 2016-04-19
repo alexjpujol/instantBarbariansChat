@@ -48,7 +48,7 @@ $(document).ready(function() {
                 var translatedText = text.data.translations[0].translatedText;
                 console.log(translatedText);
                 $('#m').val('');
-                $('#m').val(translatedText);
+                $('#m').val(translatedText + " (" + startingText + ")");
             }
             $.getJSON(source, translateText);
         });
