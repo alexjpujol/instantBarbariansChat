@@ -8,7 +8,9 @@ h1 {
 
 #chatmessages {
     border-right: solid black 2px;
-    margin-right: 10px
+    margin-right: 10px;
+    height: 275px;
+    overflow: scroll;
 }
 
 #messages { 
@@ -35,10 +37,6 @@ h1 {
 #userlist li { 
     padding: 10px; 
     margin-left: 0px
-}
-      
-#userlist li:nth-child(odd) { 
-    background: #eee; 
 }
 
 /*video section*/
@@ -123,8 +121,12 @@ button {
 
 #popup {
     display: none;
-    text-align: center
+    text-align: center;
+    position: absolute;
+    height: 300px;
+    width: 150px
 }
+
 
 .language {
     margin: 5px

@@ -71,6 +71,8 @@ $(document).ready(function() {
         $("#messages").append($('<li>').text(msg));
     });
     
+    $("#chatmessages").scrollTop(100);
+    
     // send to the server the name of the user that left the chat
     socket.emit('disconnect', name);
     // add to the chat log the name of the user that left
