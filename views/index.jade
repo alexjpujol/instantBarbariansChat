@@ -1,0 +1,16 @@
+extends ./layout.jade
+
+block content
+    #main
+            h1#maintitle Instant Barbarians
+            h3 A Barbaric Real-time Chat App
+            form(action="/chat")
+                .row
+                    div(class="six columns offset-by-four")
+                        input#name(placeholder="Enter your name")
+                .row
+                    div(class="two columns offset-by-five")
+                        input#submitname(class="button-primary" type="submit" value="Submit")
+        
+        
+    

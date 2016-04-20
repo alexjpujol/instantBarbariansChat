@@ -1,4 +1,43 @@
-h1 {
+@font-face {
+    font-family: Ailerons;
+    src: url(../fonts/Ailerons.otf);
+}
+
+#main {
+    background-image: url('../images/cosmos.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+#maintitle {
+    font-size: 5em
+}
+
+#maintitle, h3 {
+    font-family: Ailerons;
+    text-align: center;
+    margin-bottom: 0px;
+    color: whitesmoke
+}
+
+#name {
+    font-family: Ailerons;
+    width: 50%;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 1.5em;
+    text-align: center;
+    margin: 10px
+}
+
+#submitname {
+    font-family: Ailerons;
+    border-radius: 25px;
+    font-size: 1.5em
+}
+
+#chattitle {
     border-bottom: 2px solid black;
     text-align: center;
     margin-bottom: 0px
@@ -76,14 +115,14 @@ video {
 
 /*chat input at the bottom*/
 
-form {
+#chatform {
     margin-bottom: 0px;
     margin-top: 0.5%;
     width: 85%;
     display: inline-block
 }
 
-form input {
+#m {
     width: 85%;
     margin-left: 2%;
     padding: 10px;

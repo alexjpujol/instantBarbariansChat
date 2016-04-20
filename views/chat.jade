@@ -2,7 +2,7 @@ extends ./layout.jade
 
 block content
     
-    h1 #{title}
+    h1#chattitle #{title}
     
     .row#videosection
         #user1(class="four columns")
@@ -22,7 +22,7 @@ block content
             ul(id="userlist")
     .row
         #entertext(class="twelve columns")
-            form(action="")
+            form#chatform(action="")
                 input(id="m" autocomplete="off")
                 button#send Send
             button#translate Translate
