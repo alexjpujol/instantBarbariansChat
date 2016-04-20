@@ -1,9 +1,60 @@
 var socket = io.connect();
 var name = prompt("What is your name?");
 var room = 'Instant Barbarians';
-    
+//var channelReady = false;
 $(document).ready(function() {
     
+//    socket.on('connect', onChannelOpened);
+//    
+//    function onChannelOpened(evt) {
+//        channelReady = true;
+//        console.log(channelReady);
+//    }
+//    
+//    function createPeerConnection() {
+//        var pc_config = {"iceServers":[]};
+//        
+//        peerConn = new RTCPeerConnection(pc_config);
+//        
+//        peerConn.onicecandidate = function(evt) {
+//            socket.json.send({type: "candidate", evt.candidate});
+//        };
+//        
+//        peerConn.onaddstream = function(evt) {
+//            remoteVideo.src = window.URL.createObjectURL(evt.stream);
+//        };
+//        
+//        peerConn.addStream(localStream);
+//    }
+//    
+//    var mediaConstraints = {'mandatory': {
+//        'OfferToReceiveAudio': true,
+//        'OfferToReceiveVideo': true }};
+//    
+//    function setLocalAndSendMessage(sessionDescription) {
+//        peerConn.setLocalDescription(sessionDescription);
+//        socket.json.send(sessionDescription);
+//    }
+//    
+//    peerConn.createOffer(setLocalAndSendMessage, errorCallback, mediaConstraints);
+//    
+//    socket.on('message', onMessage);
+//    
+//    function onMessage(evt) {
+//        if (evt.type === 'offer') {
+//            if(!started) {
+//                createPeerConnection();
+//                started = true;
+//            }
+//            peerConn.setRemoteDescription(new RTCSessionDescription());
+//            peerConn.createAnswer(setLocalAndSendMessage, errorCallback, mediaConstraints);
+//        } else if (evt.type === 'answer' && started) { 
+//            peerConn.setRemoteDescription(new RTCSessionDescription());
+//        } else if (evt.type === 'candidate' && started) {
+//            var candidate = new RTCIceCandidate(evt.candidate);
+//            peerConn.addIceCandidate(candidate);
+//        }
+//    }
     //adding users to the active user list
     socket.on('connect', function() {
          $("#userlist").append($('<li>').text(name))
