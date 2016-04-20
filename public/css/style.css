@@ -8,7 +8,9 @@ h1 {
 
 #chatmessages {
     border-right: solid black 2px;
-    margin-right: 10px
+    margin-right: 10px;
+    height: 275px;
+    overflow: scroll;
 }
 
 #messages { 
@@ -35,10 +37,6 @@ h1 {
 #userlist li { 
     padding: 10px; 
     margin-left: 0px
-}
-      
-#userlist li:nth-child(odd) { 
-    background: #eee; 
 }
 
 /*video section*/
@@ -79,24 +77,36 @@ video {
 /*chat input at the bottom*/
 
 form {
-    margin-bottom: 0.5%;
+    margin-bottom: 0px;
+    margin-top: 0.5%;
+    width: 85%;
+    display: inline-block
 }
 
 form input {
     width: 85%;
     margin-left: 2%;
-    margin-right: 2%
-    margin-bottom: 0%;
     padding: 10px;
-    border-radius: 5px
+    border-radius: 5px;
+}
+
+button {
+    background-color: whitesmoke;
+}
+
+#translate {
+    width: 130px;
+    margin-left: 1%;
+    margin-top: 10px;
+    text-align: center;
 }
 
 #send {
-    width: 8%;
-    background-color: whitesmoke;
-    margin-left: 2%;
-    margin-top: 1%;
-    text-align: center
+    width: 100px;
+    margin-left: 1%;
+    margin-top: 10px;
+    text-align: center;
+    display: inline-block
 }
 
 #entertext {
@@ -107,4 +117,17 @@ form input {
     background-color: black;
     border-right: 2px solid black;
     clear: both;
+}
+
+#popup {
+    display: none;
+    text-align: center;
+    position: absolute;
+    height: 300px;
+    width: 150px
+}
+
+
+.language {
+    margin: 5px
 }

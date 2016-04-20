@@ -23,6 +23,41 @@ $(document).ready(function() {
         $("#messages").append($('<li>').text(data));
     })
     
+    
+    // GOOGLE translate functions here
+    $("#translate").click(function(evt) {
+        evt.preventDefault();
+        $("#popup").css({"display": "block"});
+        $(".language").click(function(e) {
+            if(e.currentTarget.innerHTML === "German") {
+                var target = "de"
+            } else if (e.currentTarget.innerHTML === "Spanish") {
+                var target = "es"
+            } else if (e.currentTarget.innerHTML === "French") {
+                var target = "fr"
+            }
+            else if (e.currentTarget.innerHTML === "Chinese") {
+                var target = "zh-CN"
+            }
+            else if (e.currentTarget.innerHTML === "Japanese") {
+                var target = "ja"
+            }
+            else if (e.currentTarget.innerHTML === "Catalan") {
+                var target = "ca"
+            };
+            var startingText = $('#m').val();
+            var source = `https://www.googleapis.com/language/translate/v2?key=AIzaSyDY4WYub-4sTOjexMqIrBozgbTpUURtK7k&source=en&target=${target}&q=${startingText}`;
+            function translateText(text) {
+                var translatedText = (text.data.translations[0].translatedText).replace("&#39;", "'");
+                console.log(translatedText);
+                $('#m').val('');
+                $('#m').val(translatedText + " (" + startingText + ")");
+            }
+            $.getJSON(source, translateText);
+        });
+    })
+    
+    //this is for submitting a chat message
     $("form").submit(function(){
         //this creates the chat message event with the value of #m as the data
         socket.emit('chat message', $('#m').val());
@@ -35,6 +70,8 @@ $(document).ready(function() {
     socket.on('chat message', function(msg){
         $("#messages").append($('<li>').text(msg));
     });
+    
+    $("#chatmessages").scrollTop(100);
     
     // send to the server the name of the user that left the chat
     socket.emit('disconnect', name);

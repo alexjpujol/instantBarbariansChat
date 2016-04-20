@@ -17,21 +17,21 @@ app.set('view options', {
 
 //set up the routes
 
-app.get('/', function(req,res) {
+app.get('/chat', function(req,res) {
     res.render('chat', {title: "Instant Barbarians"});
-})
+});
 //set up the message events and emissions
 
-var users = {}
 
 io.on('connection', function(socket) {
+    
+    var users = {}
     
     socket.on('join', function(name) {
     //i take the socket ID of the socket that just joined and assign that as a key. The value is then the name that is collected via the prompt. This is then passed back to the client
         users[socket.id] = name;
-        io.emit('new user', name + " has joined the chat!")
+        io.emit('new user', name + " has joined the chat!");
     });
-    
 //    socket.on('typing', function(name) {
 //        io.socket.broadcast(name + " is typing!");
 //    })
