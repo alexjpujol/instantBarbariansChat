@@ -1,4 +1,4 @@
-var socket = io.connect();
+var socket = io.connect('http://localhost');
 var name = prompt("What is your name?");
 var room = 'Instant Barbarians';
 //var channelReady = false;
