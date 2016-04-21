@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "my final project chat app!",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "dependencies": {
     "express": "^4.10.2",
