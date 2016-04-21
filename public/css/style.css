@@ -10,6 +10,10 @@
     height: 100vh;
 }
 
+.row {
+    text-align: center
+}
+
 #maintitle {
     font-size: 5em
 }
