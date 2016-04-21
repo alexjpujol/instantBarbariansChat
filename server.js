@@ -17,6 +17,10 @@ app.set('view options', {
 
 //set up the routes
 
+app.get('/', function(req,res) {
+    res.render('index', {title: "Instant Barbarians"});
+});
+
 app.get('/chat', function(req,res) {
     res.render('chat', {title: "Instant Barbarians"});
 });

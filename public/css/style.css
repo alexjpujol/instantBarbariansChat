@@ -1,7 +1,51 @@
-h1 {
-    border-bottom: 2px solid black;
+@font-face {
+    font-family: Ailerons;
+    src: url(../fonts/Ailerons.otf);
+}
+
+#main {
+    background-image: url('../images/cosmos.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.main {
+    text-align: center
+}
+
+.maintitle {
+    font-size: 5em
+}
+
+.maintitle, h3 {
+    font-family: Ailerons;
     text-align: center;
-    margin-bottom: 0px
+    margin-bottom: 0px;
+    color: whitesmoke
+}
+
+#chattitle {
+    font-family: Ailerons;
+    text-align: center;
+    margin-bottom: 0px;
+    font-size: 5em
+}
+
+#name {
+    font-family: Arial;
+    width: 50%;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 1.5em;
+    text-align: center;
+    margin: 10px
+}
+
+#submitname {
+    font-family: Arial;
+    border-radius: 25px;
+    font-size: 1.5em
 }
 
 /*message section*/
@@ -25,7 +69,7 @@ h1 {
 }
       
 #messages li:nth-child(odd) { 
-    background: #eee; 
+    background: rgb(180, 95, 16); 
 }
 
 #userlist { 
@@ -76,14 +120,14 @@ video {
 
 /*chat input at the bottom*/
 
-form {
+#chatform {
     margin-bottom: 0px;
     margin-top: 0.5%;
     width: 85%;
     display: inline-block
 }
 
-form input {
+#m {
     width: 85%;
     margin-left: 2%;
     padding: 10px;

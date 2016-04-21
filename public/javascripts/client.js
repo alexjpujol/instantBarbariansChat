@@ -1,7 +1,18 @@
 var socket = io.connect();
-var name = prompt("What is your name?");
 var room = 'Instant Barbarians';
+
+function getNameVariable(variable) {
+    var query = window.location.search.substring(1).split("=");
+    var urlName = query[1];
+    if (urlName === undefined) {
+        return "Someone"
+    } else {
+        return(urlName.split("+")[0])
+    }
+};
     
+var name = getNameVariable();
+
 $(document).ready(function() {
     
     //adding users to the active user list
