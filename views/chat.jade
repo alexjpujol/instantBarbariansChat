@@ -5,14 +5,10 @@ block content
     h1#chattitle #{title}
     
     .row#videosection
-        #user1(class="four columns")
+        #user1(class="six columns")
             h5 Barbarian #1
             video#localVideo(height="300")
-        #controls(class="four columns")
-            button#startButton Start
-            button#callButton Call
-            button#hangupButton Stop
-        #user2(class="four columns")
+        #user2(class="six columns")
             h5 Barbarian #2
             #remotesVideos
     .row
@@ -20,25 +16,23 @@ block content
             ul(id="messages")
         #activeusers
             ul(id="userlist")
-    .row
-        #entertext(class="twelve columns")
-            form#chatform(action="")
-                input(id="m" autocomplete="off")
-                button#send Send
-            button#translate Translate
-            #popup
+        #popup(class="hidden")
+            #buttons
                 button.language German
                 button.language Spanish
                 button.language Catalan
                 button.language French
                 button.language Chinese
                 button.language Japanese
+    .row
+        #entertext(class="twelve columns")
+            form#chatform(action="")
+                input(id="m" autocomplete="off")
+                button#send Send
+            button#translate Translate
     
     script(src="https://cdn.socket.io/socket.io-1.2.0.js")
     script(src="https://simplewebrtc.com/latest-v2.js")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
-    //script(src="javascripts/adapter.js")
     script(src="javascripts/client.js")
-    script(src="https://simplewebrtc.com/latest-v2.js")
-    // script(src="javascripts/webRTC.js")
     

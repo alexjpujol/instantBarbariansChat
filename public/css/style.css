@@ -145,13 +145,6 @@ button {
     text-align: center;
 }
 
-#send {
-    width: 100px;
-    margin-left: 1%;
-    margin-top: 10px;
-    text-align: center;
-    display: inline-block
-}
 
 #entertext {
     border-top: 2px solid black;
@@ -163,15 +156,35 @@ button {
     clear: both;
 }
 
-#popup {
+.hidden {
+    background-color: black;
+    border-radius: 25px;
     display: none;
+    right: 10px;
+    bottom: 100px;
     text-align: center;
     position: absolute;
-    height: 300px;
-    width: 150px
+    height: 320px;
+    width: 160px;
 }
 
+#buttons {
+    margin-top: 10%
+}
+
+.visible {
+    display: inline-block;
+    background-color: black;
+    border-radius: 25px;
+    right: 10px;
+    bottom: 100px;
+    text-align: center;
+    position: absolute;
+    height: 320px;
+    width: 160px;
+}
 
 .language {
-    margin: 5px
+    width: 120px;
+    text-align: center
 }

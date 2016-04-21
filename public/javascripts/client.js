@@ -50,10 +50,11 @@ $(document).ready(function() {
     
     
     // GOOGLE translate functions here
-    $("#translate").click(function(evt) {
-        evt.preventDefault();
-        $("#popup").css({"display": "block"});
-        $(".language").click(function(e) {
+    $("#translate").click(function() {
+        $('#popup').toggleClass("visible");
+    });
+        
+    $(".language").click(function(e) {
             if(e.currentTarget.innerHTML === "German") {
                 var target = "de"
             } else if (e.currentTarget.innerHTML === "Spanish") {
@@ -80,7 +81,6 @@ $(document).ready(function() {
             }
             $.getJSON(source, translateText);
         });
-    })
     
     //this is for submitting a chat message
     $("form").submit(function(){
