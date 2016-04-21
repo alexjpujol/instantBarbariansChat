@@ -3,12 +3,12 @@ extends ./layout.jade
 block content
     #main
         .container
-            h1#maintitle Instant Barbarians
+            h1.maintitle Instant Barbarians
             h3 A Barbaric Real-time Chat App
             form(method="get" action="/chat")
-                .row
+                .main
                         input#name(type="text" name="name" placeholder="Enter your name")
-                .row
+                .main
                         input#submitname(class="button-primary" type="submit" value="Submit")
         
         

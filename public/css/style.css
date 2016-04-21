@@ -10,23 +10,30 @@
     height: 100vh;
 }
 
-.row {
+.main {
     text-align: center
 }
 
-#maintitle {
+.maintitle {
     font-size: 5em
 }
 
-#maintitle, h3 {
+.maintitle, h3 {
     font-family: Ailerons;
     text-align: center;
     margin-bottom: 0px;
     color: whitesmoke
 }
 
-#name {
+#chattitle {
     font-family: Ailerons;
+    text-align: center;
+    margin-bottom: 0px;
+    font-size: 5em
+}
+
+#name {
+    font-family: Arial;
     width: 50%;
     padding: 10px;
     border-radius: 25px;
@@ -36,15 +43,9 @@
 }
 
 #submitname {
-    font-family: Ailerons;
+    font-family: Arial;
     border-radius: 25px;
     font-size: 1.5em
-}
-
-#chattitle {
-    border-bottom: 2px solid black;
-    text-align: center;
-    margin-bottom: 0px
 }
 
 /*message section*/
@@ -68,7 +69,7 @@
 }
       
 #messages li:nth-child(odd) { 
-    background: #eee; 
+    background: rgb(180, 95, 16); 
 }
 
 #userlist { 

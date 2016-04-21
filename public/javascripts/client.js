@@ -4,8 +4,12 @@ var room = 'Instant Barbarians';
 function getNameVariable(variable) {
     var query = window.location.search.substring(1).split("=");
     var urlName = query[1];
-    return (urlName.split("+")[0]);  
-}
+    if (urlName === undefined) {
+        return "Someone"
+    } else {
+        return(urlName.split("+")[0])
+    }
+};
     
 var name = getNameVariable();
 
