@@ -45,7 +45,7 @@ function call() {
     trace('Using audio device: ' + localStream.getAudioTracks()[0].label);
   }
 
-  var servers = null;
+  var servers = {"iceServers": [{"url": "stun:stun.l.google.com:19302"}]};
 
   localPeerConnection = new RTCPeerConnection(servers);
   trace("Created local peer connection object localPeerConnection");
