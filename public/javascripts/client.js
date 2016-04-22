@@ -99,7 +99,7 @@ $(document).ready(function() {
         } else {
             return time.getMinutes();
         }};
-        var hours = function() {if (time.getHours <= 12) {
+        var hours = function() {if (time.getHours() <= 12) {
             return time.getHours();
         } else {
             return time.getHours() - 12;

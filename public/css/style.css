@@ -1,4 +1,4 @@
-/*homepage*/
+/*HOMEPAGE*/
 
 @font-face {
     font-family: Ailerons;
@@ -32,15 +32,8 @@ a {
     color: whitesmoke
 }
 
-#chattitle {
-    font-family: Ailerons;
-    text-align: center;
-    margin-bottom: 0px;
-    font-size: 5em
-}
-
 #name {
-    font-family: Arial;
+    font-family: Ailerons;
     width: 50%;
     padding: 10px;
     border-radius: 25px;
@@ -50,26 +43,59 @@ a {
 }
 
 #submitname {
-    font-family: Arial;
+    font-family: Ailerons;
     border-radius: 25px;
     font-size: 1.5em
 }
 
+
+
+
+/* CHAT PAGE */
+
+.jumbotron {
+    border-bottom: 2px solid black;
+    padding: 5px;
+    margin-bottom: 5px
+}
+
+.jumbotron h1 {
+    margin: 0px
+}
+
+#chattitle {
+    font-family: Ailerons;
+    text-align: center;
+    margin-bottom: 0px;
+    font-size: 5em
+}
 /*video section*/
+
+#videosection {
+    height: 300px;
+    border-bottom: 2px solid black
+}
 
 
 #localVideo {
     height: 250px;
-    border: 0px;
+    border-radius: 10%
 }
 
-#remotesVideo {
+#remotesVideos {
     height: 250px;
-    border: 0px;
+    border-radius: 10%
+}
+
+video {
+    height: 250px;
+    border-radius: 10%;
+    margin-right: 5px
 }
 
 #user1, #user2 {
-    display: inline-block
+    display: inline-block;
+    text-align: center;
 }
 
 
@@ -97,10 +123,10 @@ a {
     margin: 0px auto;
     margin-top: 5px;
     border-radius: 25px;
-    width: 85%;
-    background: 
-    
+    width: 85%; 
+    float: left;
 }
+
       
 #messages li:hover { 
     background: rgb(191, 239, 255); 
@@ -110,8 +136,8 @@ a {
     width: 24.35%;
     height: 257px;
     display: inline-block;
-    position: fixed;
-    float: right
+    float: right;
+    padding: 0px
 }
 
 #userlist { 
@@ -129,96 +155,40 @@ a {
     background: rgb(180, 95, 16); 
 }
 
-/*video section*/
-
-h5 {
-    margin-bottom: 0px
-}
-
-#videosection {
-    border-bottom: 2px solid black
-}
-
-video {
-    width: 300px;
-    height: 250px;
-    border: 1px solid black;
-    text-align: center
-}
-
-#controls {
-    text-align: center;
-    margin-top: 8%;
-}
-
-#user1, #user2 {
-    text-align: center;
-    height: 300px
-}
-
-#record {
-    background-color: whitesmoke;
-    margin-left: 2%;
-    margin-bottom: 0.5%;
-    margin-top: 1%;
-    text-align: center
-}
-
 /*chat input at the bottom*/
 
+#chatinput {
+    border-top: 2px solid black;
+    background-color: rgb(51, 51, 51)
+}
+
 #chatform {
-    margin-bottom: 0px;
-    margin-top: 0.5%;
-    width: 85%;
-    display: inline-block
+    display: inline-block;
+    width: 85%
 }
 
 #m {
-    width: 85%;
-    margin-left: 2%;
     padding: 10px;
+    width: 85%;
     border-radius: 5px;
+    margin: 10px
 }
 
-button {
-    background-color: whitesmoke;
-}
-
-#translate {
-    width: 130px;
-    margin-left: 1%;
-    margin-top: 10px;
-    text-align: center;
-}
-
-#send {
-    margin-left: 25px
-}
-
-#entertext {
-    border-top: 2px solid black;
-    position: fixed;
-    bottom: 0;
-    vertical-align: center;
-    background-color: black;
-    border-right: 2px solid black;
-    clear: both;
+#send, #translate {
+    display:inline-block;
+    margin: 10px;
+    width: 100px
 }
 
 .hidden {
     background-color: black;
     border-radius: 25px;
-    display: none;
     right: 10px;
     bottom: 100px;
     text-align: center;
     position: absolute;
     height: 320px;
     width: 160px;
-}
-
-#buttons {
-    margin-top: 10%
 }
 
 .visible {
@@ -233,7 +203,16 @@ button {
     width: 160px;
 }
 
+#popup {
+    height: 275px
+}
+
+#buttons {
+    margin-top: 5px
+}
+
 .language {
     width: 120px;
-    text-align: center
+    text-align: center;
+    margin: 5px
 }
