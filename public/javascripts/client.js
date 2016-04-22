@@ -51,7 +51,7 @@ $(document).ready(function() {
     
     // GOOGLE translate functions here
     $("#translate").click(function() {
-        $('#popup').toggleClass("visible");
+        $('#popup').slideToggle("slow");
     });
         
     $(".language").click(function(e) {
