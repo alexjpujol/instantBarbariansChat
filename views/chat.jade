@@ -1,18 +1,24 @@
 extends ./layout.jade
 
 block content
-    
-    h1#chattitle #{title}
+
+    script(src="https://cdn.socket.io/socket.io-1.2.0.js")
+    script(src="https://simplewebrtc.com/latest-v2.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
+    script(src="javascripts/client.js")
     
     .row#videosection
-        #user1(class="six columns")
-            h5 Barbarian #1
-            video#localVideo(height="300")
-        #user2(class="six columns")
-            h5 Barbarian #2
+        a(href="/")
+            h1#chattitle #{title}
+        #user1(class="five columns offset-by-one")
+            script. 
+                document.write('<h5>' + name + '</h5>')
+            video#localVideo
+        #user2(class="five columns")
+            h5 Your Friend
             #remotesVideos
     .row
-        #chatmessages(class="nine columns")
+        #chatmessages
             ul(id="messages")
         #activeusers
             ul(id="userlist")
@@ -31,8 +37,8 @@ block content
                 button#send Send
             button#translate Translate
     
-    script(src="https://cdn.socket.io/socket.io-1.2.0.js")
-    script(src="https://simplewebrtc.com/latest-v2.js")
-    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
-    script(src="javascripts/client.js")
+//    script(src="https://cdn.socket.io/socket.io-1.2.0.js")
+//    script(src="https://simplewebrtc.com/latest-v2.js")
+//    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
+//    script(src="javascripts/client.js")
     

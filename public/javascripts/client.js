@@ -12,16 +12,16 @@ function getNameVariable(variable) {
 };
 
 var webrtc = new SimpleWebRTC({
-  // the id/element dom element that will hold "our" video
+  // where the local video lives
   localVideoEl: 'localVideo',
-  // the id/element dom element that will hold remote videos
+  // where the remote video lives
   remoteVideosEl: 'remotesVideos',
   // immediately ask for camera access
   autoRequestMedia: true
 });
 
 webrtc.on('readyToCall', function () {
-  // you can name it anything
+  // Instant Barbarian room
   webrtc.joinRoom('Instant Barbarians');
 });
     
@@ -93,10 +93,21 @@ $(document).ready(function() {
     
     //append to the chat log a user's chats
     socket.on('chat message', function(msg){
-        $("#messages").append($('<li>').text(msg));
+        var time = new Date();
+        var minutes = function() {if (time.getMinutes() < 10) {
+            return ("0" + time.getMinutes())
+        } else {
+            return time.getMinutes();
+        }};
+        var hours = function() {if (time.getHours <= 12) {
+            return time.getHours();
+        } else {
+            return time.getHours() - 12;
+        }};
+        var formattedTime = hours() + ":" + minutes();
+        $("#messages").append($('<li>').text(formattedTime + " - " + msg));
     });
-    
-    $("#chatmessages").scrollTop(100);
+
     
     // send to the server the name of the user that left the chat
     socket.emit('disconnect', name);

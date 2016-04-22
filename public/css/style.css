@@ -1,6 +1,13 @@
+/*homepage*/
+
 @font-face {
     font-family: Ailerons;
     src: url(../fonts/Ailerons.otf);
+}
+
+a {
+    text-decoration: none;
+    color: black
 }
 
 #main {
@@ -48,13 +55,35 @@
     font-size: 1.5em
 }
 
+/*video section*/
+
+
+#localVideo {
+    height: 250px;
+    border: 0px;
+}
+
+#remotesVideo {
+    height: 250px;
+    border: 0px;
+}
+
+#user1, #user2 {
+    display: inline-block
+}
+
+
 /*message section*/
 
 #chatmessages {
     border-right: solid black 2px;
     margin-right: 10px;
-    height: 275px;
+    height: 257px;
+    width: 75.65%;
     overflow: scroll;
+    display: inline-block;
+    float: left;
+    margin-right: 0px;
 }
 
 #messages { 
@@ -64,12 +93,25 @@
 }
       
 #messages li { 
-    padding: 10px; 
-    margin: 0px;
+    padding: 10px 10px 10px 15px; 
+    margin: 0px auto;
+    margin-top: 5px;
+    border-radius: 25px;
+    width: 85%;
+    background: 
+    
 }
       
-#messages li:nth-child(odd) { 
-    background: rgb(180, 95, 16); 
+#messages li:hover { 
+    background: rgb(191, 239, 255); 
+}
+
+#activeusers {
+    width: 24.35%;
+    height: 257px;
+    display: inline-block;
+    position: fixed;
+    float: right
 }
 
 #userlist { 
@@ -80,7 +122,11 @@
       
 #userlist li { 
     padding: 10px; 
-    margin-left: 0px
+    margin-left: 0px;
+}
+
+#userlist li:nth-child(odd) { 
+    background: rgb(180, 95, 16); 
 }
 
 /*video section*/
@@ -145,6 +191,9 @@ button {
     text-align: center;
 }
 
+#send {
+    margin-left: 25px
+}
 
 #entertext {
     border-top: 2px solid black;
