@@ -29,6 +29,18 @@ var name = getNameVariable();
 
 $(document).ready(function() {
     
+//    $(document).keypress(function(e) {
+//        if (e.which == 13) {
+//            $("form").submit(function(){
+//        //this creates the chat message event with the value of #m as the data
+//        socket.emit('chat message', $('#m').val());
+//        //this resets value of the chat message input to empty
+//        $('#m').val('');
+//        return false;
+//    });
+//        }
+//    })
+    
     //adding users to the active user list
     socket.on('connect', function() {
          $("#userlist").append($('<li>').text(name))
@@ -50,9 +62,12 @@ $(document).ready(function() {
     
     
     // GOOGLE translate functions here
-    $("#translate").click(function() {
+    $("#translate").click(function(e) {
+        e.preventDefault();
         $('#popup').slideToggle("slow");
     });
+    
+    
         
     $(".language").click(function(e) {
             if(e.currentTarget.innerHTML === "German") {

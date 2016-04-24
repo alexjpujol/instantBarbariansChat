@@ -7,24 +7,25 @@ block content
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
     script(src="javascripts/client.js")
     
-    .jumbotron
-        a(href="/")
-            h1#chattitle #{title}
-    .container-fluid
-        .row#videosection
+    .container
+        .jumbotron
+            a(href="/")
+                h1#chattitle #{title}
+        .row#mainsection
             #user1(class="col-sm-6")
-                script. 
-                    document.write('<h5>' + name + '</h5>')
-                video#localVideo
-            #user2(class="col-sm-6")
-                h5 Your Friend
+                script.
+                    document.write('<h3 id="displayname">' + name + '</h3>')
                 #remotesVideos
-        .row
-            #chatmessages(class="col-md-8")
+                    video#localVideo
+            #chatmessages(class="col-sm-6")
+                h3 Chat Log
                 ul(id="messages")
-            #activeusers(class="col-md-8")
-                ul(id="userlist")
-                #popup(class="visible")
+                #chatinput
+                    form#chatform(action="")
+                        input(id="m" autocomplete="off" placeholder="Enter your message here!")      
+                        button#send(class="btn btn-default") Send
+                        button#translate(class="btn btn-default") Translate
+            #popup(class="visible")
                     #buttons
                         button.language(class="btn btn-default") German
                         button.language(class="btn btn-default") Spanish
@@ -32,10 +33,3 @@ block content
                         button.language(class="btn btn-default") French
                         button.language(class="btn btn-default") Chinese
                         button.language(class="btn btn-default") Japanese
-        .row#chatinput
-            .col-md-12
-                form#chatform(action="")
-                    input(id="m" autocomplete="off")      
-                    button#send(class="btn btn-default") Send
-                button#translate(class="btn btn-default") Translate
-    
