@@ -76,6 +76,8 @@ $(document).ready(function() {
             console.log(startingLanguage);
             if(e.currentTarget.innerHTML === "German") {
                 var target = "de"
+            } else if (e.currentTarget.innerHTML === "English") {
+                var target = "en"
             } else if (e.currentTarget.innerHTML === "Spanish") {
                 var target = "es"
             } else if (e.currentTarget.innerHTML === "French") {
