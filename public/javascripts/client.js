@@ -53,14 +53,27 @@ $(document).ready(function() {
     
     
     // GOOGLE translate functions here
+    var startingLanguage;
     $("#translate").click(function(e) {
         e.preventDefault();
         $('#popup').slideToggle("slow");
+        var startingText = $('#m').val();
+        
+        if (startingText != "") {
+            var detect = `https://www.googleapis.com/language/translate/v2/detect?key=AIzaSyDY4WYub-4sTOjexMqIrBozgbTpUURtK7k&q=${startingText}`;
+        
+            function detectText(data) {
+            startingLanguage = data.data.detections[0][0].language;
+            console.log(startingLanguage);
+        }
+        
+            $.getJSON(detect,detectText);
+        };
     });
-    
     
         
     $(".language").click(function(e) {
+            console.log(startingLanguage);
             if(e.currentTarget.innerHTML === "German") {
                 var target = "de"
             } else if (e.currentTarget.innerHTML === "Spanish") {
@@ -78,26 +91,25 @@ $(document).ready(function() {
                 var target = "ca"
             };
             var startingText = $('#m').val();
-        
             
-            var detect = `https://www.googleapis.com/language/translate/v2/detect?key=AIzaSyDY4WYub-4sTOjexMqIrBozgbTpUURtK7k&q=${startingText}`;
-        
-            function detectText(data) {
-                console.log(data.data.detections[0][0].language);
-            }
-            
-            $.getJSON(detect,detectText);
-        
-            var source = `https://www.googleapis.com/language/translate/v2?key=AIzaSyDY4WYub-4sTOjexMqIrBozgbTpUURtK7k&source=en&target=${target}&q=${startingText}`;
+            if (startingLanguage != target) {
+            var source = `https://www.googleapis.com/language/translate/v2?key=AIzaSyDY4WYub-4sTOjexMqIrBozgbTpUURtK7k&source=${startingLanguage}&target=${target}&q=${startingText}`;
         
             function translateText(text) {
                 var translatedText = (text.data.translations[0].translatedText).replace("&#39;", "'");
                 console.log(translatedText);
                 $('#m').val('');
-                $('#m').val(translatedText + " (" + startingText + ")");
+                $('#m').val(translatedText);
             }
             $.getJSON(source, translateText);
+            }
+            else {
+                return false
+            }
+            $('#popup').slideToggle("slow");
         });
+    
+    
     
     
     // this prevents double translation if you press enter
