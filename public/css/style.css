@@ -5,6 +5,11 @@
     src: url(../fonts/Ailerons.otf);
 }
 
+@font-face {
+    font-family: Libertine;
+    src: url(../fonts/LinLibertine.ttf);
+}
+
 a {
     text-decoration: none;
     color: black
@@ -126,6 +131,7 @@ video {
 #mainsection {
     width: 100%;
     margin: 0px auto;
+    font-family: Libertine
 }
 
 #chatmessages {
@@ -148,7 +154,9 @@ video {
     margin: 0px; 
     padding: 0px;
     overflow:scroll;
-    height: 300px
+    height: 300px;
+    font-family: Libertine;
+    font-size: 16px
 }
       
 #messages li { 
@@ -211,7 +219,10 @@ video {
 #send, #translate {
     display:inline-block;
     margin: 10px;
-    width: 100px
+    width: 120px;
+    font-family: Ailerons;
+    font-size: 16px;
+    font-weight: 800
 }
 
 .visible {
@@ -228,7 +239,7 @@ video {
 
 #popup {
     height: 320px;
-    right: 10px
+    right: 10px;
 }
 
 #buttons {
