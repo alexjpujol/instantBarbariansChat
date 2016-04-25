@@ -28,11 +28,19 @@ webrtc.on('readyToCall', function () {
 var name = getNameVariable();
 $(document).ready(function() {
 
+    //this interval scrolls the chat log to the bottom
+    setInterval(function() {
+        var messagediv = document.getElementById("messages");
+    var scroll = messagediv.scrollHeight;
+    messagediv.scrollTop = scroll;
+    }, 500);
+
     
     //adding users to the active user list
     socket.on('connect', function() {
          $("#userlist").append($('<li>').text(name));
     })
+    
     
     //send the name from the prompt to the server
     socket.emit('join', name);
