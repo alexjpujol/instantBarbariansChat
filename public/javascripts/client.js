@@ -26,39 +26,30 @@ webrtc.on('readyToCall', function () {
 });
     
 var name = getNameVariable();
-
 $(document).ready(function() {
-    
-//    $(document).keypress(function(e) {
-//        if (e.which == 13) {
-//            $("form").submit(function(){
-//        //this creates the chat message event with the value of #m as the data
-//        socket.emit('chat message', $('#m').val());
-//        //this resets value of the chat message input to empty
-//        $('#m').val('');
-//        return false;
-//    });
-//        }
-//    })
+
     
     //adding users to the active user list
     socket.on('connect', function() {
-         $("#userlist").append($('<li>').text(name))
+         $("#userlist").append($('<li>').text(name));
     })
     
     //send the name from the prompt to the server
     socket.emit('join', name);
-    
-    socket.emit('typing', name);
+    // socket.emit('typing', name);
     
      //append to the chat log the name of the user that joined
     socket.on('new user', function(user) {
         $("#messages").append($('<li>').text(user));
     });
     
-    socket.on('typing', function(data) {
-        $("#messages").append($('<li>').text(data));
-    })
+    socket.on('join', function() {
+        var users =+ name;
+    });
+    
+//    socket.on('typing', function(data) {
+//        $("#messages").append($('<li>').text(data));
+//    })
     
     
     // GOOGLE translate functions here
@@ -87,7 +78,18 @@ $(document).ready(function() {
                 var target = "ca"
             };
             var startingText = $('#m').val();
+        
+            
+            var detect = `https://www.googleapis.com/language/translate/v2/detect?key=AIzaSyDY4WYub-4sTOjexMqIrBozgbTpUURtK7k&q=${startingText}`;
+        
+            function detectText(data) {
+                console.log(data.data.detections[0][0].language);
+            }
+            
+            $.getJSON(detect,detectText);
+        
             var source = `https://www.googleapis.com/language/translate/v2?key=AIzaSyDY4WYub-4sTOjexMqIrBozgbTpUURtK7k&source=en&target=${target}&q=${startingText}`;
+        
             function translateText(text) {
                 var translatedText = (text.data.translations[0].translatedText).replace("&#39;", "'");
                 console.log(translatedText);
@@ -96,6 +98,14 @@ $(document).ready(function() {
             }
             $.getJSON(source, translateText);
         });
+    
+    
+    // this prevents double translation if you press enter
+    $(".language").keypress(function(e) {
+        if (e.which == 13) {
+                return false;
+            };
+    });
     
     //this is for submitting a chat message
     $("form").submit(function(){
