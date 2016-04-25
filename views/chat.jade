@@ -7,33 +7,29 @@ block content
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
     script(src="javascripts/client.js")
     
-    .row#videosection
-        a(href="/")
-            h1#chattitle #{title}
-        #user1(class="five columns offset-by-one")
-            script. 
-                document.write('<h5>' + name + '</h5>')
-            video#localVideo
-        #user2(class="five columns")
-            h5 Your Friend
-            #remotesVideos
-    .row
-        #chatmessages
-            ul(id="messages")
-        #activeusers
-            ul(id="userlist")
-        #popup(class="hidden")
-            #buttons
-                button.language German
-                button.language Spanish
-                button.language Catalan
-                button.language French
-                button.language Chinese
-                button.language Japanese
-    .row
-        #entertext(class="twelve columns")
-            form#chatform(action="")
-                input(id="m" autocomplete="off")
-                button#send Send
-            button#translate Translate
-    
+    .container
+        .jumbotron
+            a(href="/")
+                h1#chattitle #{title}
+        .row#mainsection
+            #user1(class="col-sm-6")
+                script.
+                    document.write('<h3 id="displayname">' + name + '</h3>')
+                #remotesVideos
+                    video#localVideo
+            #chatmessages(class="col-sm-6")
+                h3 Chat Log
+                ul(id="messages")
+                #chatinput
+                    form#chatform(action="")
+                        input(id="m" autocomplete="off" placeholder="Enter your message here!")      
+                        button#send(class="btn btn-default") Send
+                        button#translate(class="btn btn-default") Translate
+                #popup(class="visible")
+                    #buttons
+                        button.language(class="btn btn-default") German
+                        button.language(class="btn btn-default") Spanish
+                        button.language(class="btn btn-default") Catalan
+                        button.language(class="btn btn-default") French
+                        button.language(class="btn btn-default") Chinese
+                        button.language(class="btn btn-default") Japanese

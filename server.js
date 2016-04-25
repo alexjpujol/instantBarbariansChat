@@ -30,12 +30,12 @@ app.get('/chat', function(req,res) {
 io.on('connection', function(socket) {
     
     var users = {};
-    console.log(io.sockets.sockets)
     socket.on('join', function(name) {
     //i take the socket ID of the socket that just joined and assign that as a key. The value is then the name that is collected via the prompt. This is then passed back to the client
         users[socket.id] = name;
         console.log(name + " has joined.");
         io.emit('new user', name + " has joined the chat!");
+        console.log(users);
     });
 //    socket.on('typing', function(name) {
 //        io.socket.broadcast(name + " is typing!");
