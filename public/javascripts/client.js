@@ -52,7 +52,7 @@ $(document).ready(function() {
     });
 
     
-    // GOOGLE translate functions here
+    // GOOGLE translate functions here. the api token is exposed but it's limited to only working on URLs that I specify, so it's no biggie
     var startingLanguage;
     $("#translate").click(function(e) {
         e.preventDefault();
