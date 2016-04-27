@@ -50,15 +50,7 @@ $(document).ready(function() {
     socket.on('new user', function(user) {
         $("#messages").append($('<li>').text(user));
     });
-    
-    socket.on('join', function() {
-        var users =+ name;
-    });
-    
-//    socket.on('typing', function(data) {
-//        $("#messages").append($('<li>').text(data));
-//    })
-    
+
     
     // GOOGLE translate functions here
     var startingLanguage;

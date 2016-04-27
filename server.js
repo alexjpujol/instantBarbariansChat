@@ -40,9 +40,6 @@ io.on('connection', function(socket) {
         
     })
     
-//    socket.on('typing', function(name) {
-//        io.socket.broadcast(name + " is typing!");
-//    })
     socket.on('chat message', function(msg) {
         io.emit('chat message', users[socket.id] + " says: " + msg);
     });
